@@ -45,6 +45,7 @@ def get_params(request):
 
 def predict(inputVector):
     summaries = get_summaries()
+    print(summaries)
     probablities = calculateClassProbablities(summaries, inputVector)
     bestLabel, bestProb = None, -1
     for classValue, probablity in probablities.items():
