@@ -32,7 +32,7 @@ def get_params(request):
             calls = [incoming, outgoing, missed, blank]
             inputVector = [x/all_calls for x in calls]
             result = predict(inputVector)
-
+            print ('result: '+result)
             if result == '1.0':
                 person = 'GOOD'
             else:
@@ -61,7 +61,6 @@ def get_summaries():
 
 def calculateClassProbablities(summaries, inputVector):
     probablities = {}
-    print(summaries)
     for classValue, classSummaries in summaries.items():
         probablities[classValue] = 1
         for i in range(len(classSummaries)):
